@@ -1,0 +1,130 @@
+.Carousel {
+    height: 500px;
+    position: relative;
+
+    .Layout & {
+        border-radius: 10px;
+    }
+
+    &-slide {
+        height: auto;
+
+        &--image {
+            position: relative;
+        }
+
+        &--content {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &-image {
+        z-index: z("below");
+
+        &:before {
+            content: '';
+            background-color: rgba(0, 0, 0, .35);
+            @include position(absolute, 0);
+            z-index: z("below");
+        }
+
+        .Carousel-slide--content & {
+            z-index: z("base");
+            height: 275px;
+            overflow: hidden;
+
+            &:before {
+                display: none;
+            }
+        }
+
+        &--centerPosition {
+            position: relative;
+
+            picture {
+                @include position(absolute, 50% null null 50%);
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    &-content {
+        z-index: z("base");
+        @include position(absolute, 0);
+        color: skin(white);
+        padding: 0 4.5rem;
+
+        @include media-breakpoint-up(lg) {
+            padding: 0 6rem;
+        }
+
+        .Carousel-slide--content & {
+            position: static;
+            color: grey(130);
+            border: 1px solid grey(40);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            flex-grow: 1;
+            padding: 2rem;
+
+            @include media-breakpoint-up(lg) {
+                padding: 2rem;
+            }
+        }
+    }
+
+    &-arrow {
+        background-color: skin(terracota);
+        border: none;
+        border-radius: 100%;
+        @include size(2.75rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: skin(white);
+        transform: translateY(-50%);
+        z-index: z("above");
+
+        svg {
+            @include size(1.5rem);
+        }
+
+        &:after {
+            content: '';
+            display: none;
+        }
+
+        &--prev {
+            @include position(absolute, 50% null null 1rem);
+
+            svg {
+                transform: translateX(-1px);
+            }
+        }
+
+        &--next {
+            @include position(absolute, 50% 1rem null null);
+
+            svg {
+                transform: translateX(1px);
+            }
+        }
+    }
+
+    &-pagination {
+        .swiper-pagination-bullet {
+            @include size(1rem);
+            border: 3px solid skin(charcoal);
+            background-color: transparent;
+            opacity: 1;
+            margin: 0 8px!important;
+            transition: background-color .2s ease, border-color .2s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: skin(terracota);
+            border-color: skin(terracota);
+        }
+    }
+}

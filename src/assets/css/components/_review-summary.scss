@@ -1,0 +1,18 @@
+.ReviewSummary {
+    background: skin(white);
+    border: 3px solid #C4C4C4;
+    border-radius: 20px;
+    padding: 1.5rem 1rem;
+
+    @include media-breakpoint-up(lg) {
+        padding: 2.813rem 1.75rem;
+    }
+
+    &--overlap {
+        margin-top: -1rem;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: -3.5rem;
+        }
+    }
+}

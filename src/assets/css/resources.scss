@@ -1,0 +1,47 @@
+// Tailwind Utilities
+@import "tailwind/tailwind.css";
+
+// Other Vendor files
+@import '~swiper/swiper-bundle.css';
+
+// ITCSS: Settings
+// used with preprocessors and contain font, colors definitions, etc.
+// In this layer is common define the variables that can customize the template
+@import "settings/dimensions";
+@import "settings/typography";
+@import "settings/variables";
+@import "settings/zindex";
+
+//// IF MULTIPLE SKINS REQUIRED
+//@import "settings/skins/_swatches";
+//@import "settings/skins/_default";
+
+//// ELSE
+@import "settings/swatches";
+
+// ITCSS: Tools
+// globally used mixins and functions
+@import "tools/animations";
+
+//// Bourbon tools
+@import "tools/font-face";
+@import "tools/size";
+@import "tools/position";
+
+//// Bootstrap mixins
+@import "tools/breakpoints";
+@import "tools/caret";
+@import "tools/lists";
+@import "tools/screen-reader";
+@import "tools/text-truncate";
+
+//// Custom tools
+@import "tools/zindex";
+@import "tools/skins";
+@import "tools/compat";
+@import "tools/ie-grid";
+@import "tools/rem-conversion";
+
+// ITCSS: Generic
+// reset and/or normalize styles, box-sizing definition, etc.
+@import "~normalize.css/normalize.css";

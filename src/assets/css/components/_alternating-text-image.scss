@@ -1,0 +1,12 @@
+.AlternatingTextImage {
+
+    &-heading {
+        color: skin(terracota);
+        
+        .Layout--orange,
+        .Layout--blue,
+        .Layout--dark {
+            color: skin(white);
+        }
+    }
+}

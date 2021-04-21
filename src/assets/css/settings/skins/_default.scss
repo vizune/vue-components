@@ -1,0 +1,28 @@
+$default: (
+  blue: #002c5f,
+  sand: #e4dcd3,
+  light-sand: #f6f3f2,
+  gold: #a36b4f,
+  white: #fff,
+  black: #000,
+  sky-blue: #aacae6,
+  active-blue: #00aad2,
+  active-red: #e63312
+);
+
+$skin: (
+  primary: #0A4D9F,
+  secondary: #407EC9,
+  black: map-get($default, black),
+  dark: #555,
+  light: #C8C8C8,
+  grey: #A2A2A2,
+  white: map-get($default, white),
+  neutral: map-get($default, light-sand),
+  logo: #407EC9,
+  text: map-get($default, black),
+  homepage: #c8a695
+);
+
+$ff-stack: $font-stack-helvetica;
+$fw-skin: 700;

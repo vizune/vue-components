@@ -1,0 +1,17 @@
+// This is where you can place any variables for known exact measurements
+// found across the website
+//
+// e.g. $headerSize: 70px;
+//
+// By declaring these values as variables, we avoid the confusion of magic
+// numbers, and reduce liklihood of introducing regression issues.
+//
+
+$emergencyBannerHeight: 40px;
+$navBarMobileSize: 44px;
+$navBarDesktopSize: 80px;
+$navBarLogoHeightMobile: 29px;
+$navBarLogoWidthMobile: 60px;
+$navBarLogoHeightDesktop: 59px;
+$navBarLogoWidthDesktop: 114px;
+$navBarPreHeaderHeight: 40px;

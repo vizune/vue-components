@@ -1,0 +1,47 @@
+{
+    "headings": [
+        "#",
+        "Name",
+        "Job Position",
+        "Since",
+        "Salary",
+        "Actions"
+    ],
+    "items": [
+        {
+            "#": "#",
+            "Name": "Peter Parker",
+            "Job Position": "Developer",
+            "Since": "2013",
+            "Salary": "£50,000"
+        },
+        {
+            "#": "#",
+            "Name": "Peter Parker",
+            "Job Position": "Developer",
+            "Since": "2013",
+            "Salary": "£50,000"
+        },
+        {
+            "#": "#",
+            "Name": "Peter Parker",
+            "Job Position": "Developer",
+            "Since": "2013",
+            "Salary": "£50,000"
+        },
+        {
+            "#": "#",
+            "Name": "Peter Parker",
+            "Job Position": "Developer",
+            "Since": "2013",
+            "Salary": "£50,000"
+        },
+        {
+            "#": "#",
+            "Name": "Peter Parker",
+            "Job Position": "Developer",
+            "Since": "2013",
+            "Salary": "£50,000"
+        }
+    ]
+}

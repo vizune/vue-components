@@ -1,0 +1,51 @@
+.Spotlight{
+    display:flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include media-breakpoint-up(sm)
+    {
+        flex-direction: row;
+    }
+
+    &--reverse{
+        flex-direction: column-reverse;
+
+        @include media-breakpoint-up(sm)
+        {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &-image {
+        flex-basis: 50%;
+    }
+
+    &-content {
+        background-color: skin(white);
+        display: flex;
+        flex-basis: 50%;
+        padding: 8rem 6rem;
+        flex-direction: column;
+        justify-content: space-evenly;
+        @include fontSize(16px);
+
+        .Spotlight--reverse & {
+            align-items: flex-end;
+        }
+
+       @include media-breakpoint-up(md) {
+        padding: 2rem 2rem;
+       }
+
+       @include media-breakpoint-up(lg) {
+        padding: 3rem 3rem;
+       }
+
+    }
+
+    &-heading {
+        font-size: $fs-h1;
+        line-height: 1.1;
+    }
+}

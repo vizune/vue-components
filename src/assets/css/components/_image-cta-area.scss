@@ -1,0 +1,45 @@
+.ImageCtaArea {
+    &-heading {
+        color: skin(terracota);
+        font-size: 1.563rem;
+        font-weight: 900;
+        margin-bottom: 1.25rem;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 2.438rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &-wrapper {
+        margin: 0 auto;
+        display: grid;
+        grid-column-gap: 1.875rem;
+        grid-row-gap: 1.875rem;
+        justify-content: center;
+        grid-template-columns: repeat(2, 160px);
+
+        @include media-breakpoint-up(md) {
+            grid-template-columns: repeat(4, 160px);
+        }
+    }
+
+    &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &-image {
+        @include size(140px);
+        border-radius: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-itemHeading {
+        color: skin(terracota);
+    }
+}

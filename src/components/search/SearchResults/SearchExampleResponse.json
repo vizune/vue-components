@@ -1,0 +1,270 @@
+{
+	"SearchMeta":{
+		"Term":"",
+		"Culture":"en-gb",
+		"CurrentPageIndex":0,
+		"TotalPages":1,
+		"TotalResults":11,
+		"NodeTypeAlias":null
+	},
+	"PagedResults":[
+		{
+			"Heading":"Toms Test Page",
+			"Description":"",
+			"Image":null,
+			"PublishedDate":"2020-03-19T13:28:37.65Z",
+			"Tags":[
+				{
+					"Id":1131,
+					"Name":"Article",
+					"Category":"Content Type"
+				}
+			],
+			"Url":"/toms-test-page/"
+		},
+		{
+			"Heading":"Robs Test Page",
+			"Description":"",
+			"Image":null,
+			"PublishedDate":"2020-04-09T15:47:37.32Z",
+			"Tags":[
+				{
+					"Id":1131,
+					"Name":"Article",
+					"Category":"Content Type"
+				}
+			],
+			"Url":"/robs-test-page/"
+		},
+		{
+			"Heading":"test news heading",
+			"Description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+			"Image":{
+				"Url":"/media/bvak3ro0/grayscale-macro-photography-of-person-s-eye-1047346.jpg?anchor=center&mode=crop&width=600&height=400&rnd=132291029091500000",
+				"AltText":null
+			},
+			"PublishedDate":"2020-04-14T12:00:00Z",
+			"Tags":[
+				{
+					"Id":1131,
+					"Name":"Article",
+					"Category":"Content Type"
+				},
+				{
+					"Id":1158,
+					"Name":"Page",
+					"Category":"Content Type"
+				}
+			],
+			"Url":"/articles/news/test-news/"
+		},
+		{
+			"Heading":"Coronavirus: More tests promised for care homes",
+			"Description":"All care home residents and staff with Covid-19 symptoms will be tested for coronavirus as laboratory capacity increases, the government has promised.",
+			"Image":{
+				"Url":"/media/n5xntfmq/adult-business-care-chair-305565.jpg?anchor=center&mode=crop&width=600&height=400&rnd=132291028979300000",
+				"AltText":null
+			},
+			"PublishedDate":"2020-04-04T12:00:00Z",
+			"Tags":[
+				{
+					"Id":1171,
+					"Name":"Covid-19",
+					"Category":"Misc"
+				},
+				{
+					"Id":1131,
+					"Name":"Article",
+					"Category":"Content Type"
+				}
+			],
+			"Url":"/articles/news/coronavirus-more-tests-promised-for-care-homes/"
+		},
+		{
+			"Heading":"Coronavirus: US to halt funding to WHO, says Trump",
+			"Description":"US President Donald Trump has said he is going to halt funding to the World Health Organization (WHO) because it has \"failed in its basic duty\" in its response to the coronavirus outbreak.",
+			"Image":{
+				"Url":"/media/tbmnkc1x/selective-focus-photography-of-pink-and-black-framed-975668.jpg?anchor=center&mode=crop&width=600&height=400&rnd=132291029124800000",
+				"AltText":null
+			},
+			"PublishedDate":"2020-04-03T12:00:00Z",
+			"Tags":[
+				{
+					"Id":1131,
+					"Name":"Article",
+					"Category":"Content Type"
+				},
+				{
+					"Id":1171,
+					"Name":"Covid-19",
+					"Category":"Misc"
+				},
+				{
+					"Id":1170,
+					"Name":"Political",
+					"Category":"Misc"
+				},
+				{
+					"Id":1169,
+					"Name":"America",
+					"Category":"Places"
+				}
+			],
+			"Url":"/articles/news/covid-19-trump-story/"
+		},
+		{
+			"Heading":"Coronavirus: Apple tracks changes in travel behaviour",
+			"Description":"Apple has launched a tool that reveals changes in the travel behaviour of people who use its Maps app",
+			"Image":{
+				"Url":"/media/tbmnkc1x/selective-focus-photography-of-pink-and-black-framed-975668.jpg?anchor=center&mode=crop&width=600&height=400&rnd=132291029124800000",
+				"AltText":null
+			},
+			"PublishedDate":"2020-04-15T08:33:25.22Z",
+			"Tags":[
+				{
+					"Id":1162,
+					"Name":"Educational",
+					"Category":"Misc"
+				},
+				{
+					"Id":1169,
+					"Name":"America",
+					"Category":"Places"
+				},
+				{
+					"Id":1131,
+					"Name":"Article",
+					"Category":"Content Type"
+				}
+			],
+			"Url":"/articles/tech/coronavirus-apple-tracks-changes-in-travel-behaviour/"
+		},
+		{
+			"Heading":"Home",
+			"Description":"",
+			"Image":null,
+			"PublishedDate":"2020-03-19T12:20:33.52Z",
+			"Tags":[],
+			"Url":"/"
+		},
+		{
+			"Heading":"Another test article",
+			"Description":"",
+			"Image":{
+				"Url":"/media/bvak3ro0/grayscale-macro-photography-of-person-s-eye-1047346.jpg?anchor=center&mode=crop&width=600&height=400&rnd=132291029091500000",
+				"AltText":null
+			},
+			"PublishedDate":"2020-04-15T12:00:00Z",
+			"Tags":[
+				{
+					"Id":1162,
+					"Name":"Educational",
+					"Category":"Misc"
+				},
+				{
+					"Id":1161,
+					"Name":"Cars",
+					"Category":"Misc"
+				},
+				{
+					"Id":1164,
+					"Name":"Manchester",
+					"Category":"Places"
+				},
+				{
+					"Id":1165,
+					"Name":"Cheshire",
+					"Category":"Places"
+				}
+			],
+			"Url":"/articles/news/another-test-article/"
+		},
+		{
+			"Heading":"Coronavirus: Raspberry Pi-powered ventilator to be tested in Colombia",
+			"Description":"A team in Colombia is to test a ventilator made with a Raspberry Pi computer and easy-to-source parts.",
+			"Image":{
+				"Url":"/media/te1lyltp/different-choices-of-eyeglasses-1627639.jpg?anchor=center&mode=crop&width=600&height=400&rnd=132291029027530000",
+				"AltText":null
+			},
+			"PublishedDate":"2020-04-15T08:37:12.563Z",
+			"Tags":[
+				{
+					"Id":1162,
+					"Name":"Educational",
+					"Category":"Misc"
+				},
+				{
+					"Id":1171,
+					"Name":"Covid-19",
+					"Category":"Misc"
+				}
+			],
+			"Url":"/articles/tech/coronavirus-raspberry-pi-powered-ventilator-to-be-tested-in-colombia/"
+		},
+		{
+			"Heading":"Contact",
+			"Description":"",
+			"Image":null,
+			"PublishedDate":"2020-04-22T15:55:12.237Z",
+			"Tags":[],
+			"Url":"/contact/"
+		},
+		{
+			"Heading":"Steves Test Page (1)",
+			"Description":"",
+			"Image":null,
+			"PublishedDate":"2020-04-28T08:46:17.137Z",
+			"Tags":[],
+			"Url":"/steves-test-page-1/"
+		}
+	],
+	"AvailableTags":[
+		{
+			"Id":1131,
+			"Name":"Article",
+			"Category":"Content Type"
+		},
+		{
+			"Id":1158,
+			"Name":"Page",
+			"Category":"Content Type"
+		},
+		{
+			"Id":1171,
+			"Name":"Covid-19",
+			"Category":"Misc"
+		},
+		{
+			"Id":1170,
+			"Name":"Political",
+			"Category":"Misc"
+		},
+		{
+			"Id":1169,
+			"Name":"America",
+			"Category":"Places"
+		},
+		{
+			"Id":1162,
+			"Name":"Educational",
+			"Category":"Misc"
+		},
+		{
+			"Id":1161,
+			"Name":"Cars",
+			"Category":"Misc"
+		},
+		{
+			"Id":1164,
+			"Name":"Manchester",
+			"Category":"Places"
+		},
+		{
+			"Id":1165,
+			"Name":"Cheshire",
+			"Category":"Places"
+		}
+	],
+	"Heading":"Search the website",
+	"NoResultText":"There are no results, please try again or widen your search criteria."
+}

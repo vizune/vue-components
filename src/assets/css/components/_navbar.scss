@@ -1,0 +1,556 @@
+.Navbar {
+    background-color: skin(white);
+    color: grey(130);
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: z("navbar");
+    min-height: $navBarMobileSize;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
+    padding-left: .75rem;
+
+    @include media-breakpoint-up(lg) {
+        min-height: $navBarDesktopSize;
+        padding: $navBarPreHeaderHeight 2.5rem 0;
+    }
+
+    &--dark {
+        background-color: grey(130);
+        color: skin(white);
+    }
+
+    &--clear {
+        background-color: transparent;
+    }
+
+    &-header {
+        margin-right: 2.5rem;
+        flex-grow: 1;
+        display: flex;
+    }
+
+    &-logo {
+        color: skin(white);
+        display: block;
+        @include size($navBarLogoWidthMobile, $navBarLogoHeightMobile);
+
+        @include media-breakpoint-up(lg) {
+            @include size($navBarLogoWidthDesktop, $navBarLogoHeightDesktop);
+        }
+
+        svg {
+            @include size(100%);
+        }
+    }
+
+    &-name {
+        @include fontSize(16px);
+        font-weight: $fw-thin;
+        line-height: 1;
+
+        @include media-breakpoint-up(lg) {
+            @include fontSize(24px);
+        }
+
+        @include media-breakpoint-down(lg) {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity .2s ease .3s, visibility .2s step-start .3s;
+
+            .Navbar.is-open & {
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity .2s ease, visibility .2s step-end;
+            }
+        }
+
+        .Navbar-logo + & {
+            text-indent: -99999px;
+        }
+    }
+
+    &-menu {
+        @include media-breakpoint-down(md) {
+            background: skin(white);
+            padding: 0 0 2rem;
+            margin-top: 45px;
+            opacity: 0;
+            visibility: hidden;
+            transform: scaleY(0);
+            transform-origin: top center;
+            @include position(absolute, 0 null null 0);
+            z-index: z("below");
+            transition: transform .4s ease, opacity .25s ease .4s, visibility .25s step-end .4s;
+            width: 100%;
+
+            .EmergencyBanner + .Navbar > & {
+                height: calc(100vh - 145px);
+            }
+
+            .Navbar--dark & {
+                background: grey(130);
+            }
+
+            .Navbar.is-open & {
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                z-index: z("navbarMenu");
+                transition: transform .4s ease-in-out .2s, opacity .25s ease .2s, visibility .25s step-start .2s;
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            height: 100%; 
+        }
+    }
+
+    &-list {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0 1rem;
+        margin: 0;
+
+        @include media-breakpoint-down(md) {
+            position: relative;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .2s ease, visibility .2s step-end;
+
+            .Navbar.is-open & {
+                opacity: 1;
+                visibility: visible;
+                transition: opacity .2s ease, visibility .2s step-start;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            flex-direction: row;
+            height: 100%;
+            padding: 0;
+        }
+    }
+
+    &-item {
+        & + & {
+            &:not(.is-open) {
+                margin-top: 1rem;
+
+                @include media-breakpoint-up(lg) {
+                    margin-top: 0;
+                }
+            }
+
+            @include media-breakpoint-up(lg) {
+                margin-left: 3.75rem;
+            }
+        }
+
+        @include media-breakpoint-down(lg) {
+            transition: position .3s ease-in-out .4s;
+
+            &.is-open {
+                @include position(absolute, 0 0 null 0);
+                z-index: z("navbarMenu") + 1;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            display: flex;
+            align-items: center;
+            border-bottom: 8px solid transparent;
+            transition: border-color .25s ease;
+
+            &.is-open {
+                border-color: skin(primary);
+            }
+        }
+    }
+
+    &-topLink {
+        color: skin(primary);
+        display: block;
+        @include fontSize(20px);
+        font-weight: 500;
+        line-height: 1;
+        text-decoration: none;
+
+        .Navbar--clear &,
+        .Navbar--dark & {
+            color: skin(white);
+        }
+
+        &:hover {
+            @include media-breakpoint-up(md) {
+                color: skin(primary);
+            }
+        }
+
+        &--dropdown {
+            position: relative;
+            cursor: pointer;
+
+            .Navbar-item.is-open & {
+                @include media-breakpoint-down(md) {
+                    background: skin(primary);
+                    color: skin(white);
+                    padding: .5rem 1.25rem;
+                }
+            }
+        }
+
+        &--active {
+            background-color: skin(primary);
+            box-shadow: 8px 8px 16px 0px rgba(0,0,0,0.15);
+
+            color: skin(white);
+            transition: background-color .25s ease-in-out;
+
+            &:hover {
+                background-color: darken(skin(primary), 7%);
+                color: skin(white);
+                text-decoration: none;
+            }
+        }
+    }
+
+    &-subMenu {
+        opacity: 0;
+        visibility: hidden;
+        @include position(absolute, null null null 0);
+        z-index: z("below");
+        width: 100%;
+        display: flex;
+        padding: 1rem 2.25rem 2rem;
+        background: skin(white);
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        transform: scaleY(.25);
+        transform-origin: center top;
+        box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
+        transition: opacity .2s ease, transform .3s ease-in, visibility .2s step-end;
+
+        @include media-breakpoint-up(lg) {
+            padding: 3.75rem;
+            top: calc(#{$navBarDesktopSize} + #{$navBarPreHeaderHeight});
+            transition: opacity .3s ease .1s, transform .3s ease-in, visibility .3s step-end .1s;
+        }
+
+        .Navbar--dark & {
+            background-color: grey(130);
+        }
+
+        &.is-open {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+            z-index: z("navbarMenu") + 1;
+            transition: opacity .3s ease .15s, visibility .3s step-start .15s, transform .4s ease-in-out;
+        }
+    }
+
+    &-subList {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+        width: 100%;
+        max-width: 320px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .2s,visibility .2s step-end;
+
+        .is-open & {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity .4s,visibility .4s step-start;
+        }
+
+        @include media-breakpoint-up(lg) {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+    }
+
+    &-subItem {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100%);
+        transition: transform .3s,opacity .3s,visibility .3s step-end;
+
+        .is-open & {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+            transition: transform .5s,opacity .3s,visibility .3s step-start;
+
+            @for $i from 1 to 10 {
+                &:nth-child(#{$i}) {
+                    transition-delay: #{($i/10)}s;
+                }
+            }
+        }
+
+        & + & {
+            margin-top: .75rem;
+
+            @include media-breakpoint-up(lg) {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &-subLink {
+        color: grey(130);
+        display: block;
+        line-height: 1.2;
+        position: relative;
+        text-align: left;
+        transition: color .3s ease;
+        text-decoration: none;
+        font-weight: 300;
+
+        .Navbar--dark & {
+            color: skin(white);
+        }
+
+        &:hover {
+            color: grey(130);
+            text-decoration: underline;
+
+            .Navbar--dark & {
+                color: skin(white);
+            }
+        }
+    }
+
+    &-hamburger {
+        width: 20px;
+        height: 20px;
+        flex: 0 0 auto;
+        position: relative;
+        margin-right: .75rem;
+        transform: rotate(0deg);
+        transition: .5s ease-in-out;
+        cursor: pointer;
+
+        @include media-breakpoint-up(lg) {
+            display: none;
+        }
+
+        span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: skin(primary);
+            border-radius: 5px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+
+            .Navbar--dark &,
+            .Navbar--clear & {
+                background: skin(white);
+            }
+
+            &:nth-child(1) {
+                top: 0;
+
+                .Navbar.is-open & {
+                    top: 6px;
+                    width: 0%;
+                    left: 50%; 
+                }
+            }
+
+            &:nth-child(2) {
+                .Navbar.is-open & {
+                    transform: rotate(45deg);
+                }
+            }
+
+            &:nth-child(3) {
+                .Navbar.is-open & {
+                    transform: rotate(-45deg);
+                }
+            }
+
+            &:nth-child(2), &:nth-child(3) {
+                top: 6px;
+            }
+
+            &:nth-child(4) {
+                top: 12px;
+
+                .Navbar.is-open & {
+                    top: 12px;
+                    width: 0%;
+                    left: 50%;
+                }
+            }
+        }
+    }
+
+    &-back {
+        padding: 0 4rem 1rem 3rem;
+        display: block;
+        color: grey(130);
+        position: relative;
+        opacity: 0;
+        height: 0;
+        visibility: hidden;
+        transition: opacity .15s ease, visibility .15s step-end;
+        margin-top: 1rem;
+
+        &.is-active {
+            opacity: 1;
+            height: auto;
+            visibility: visible;
+            transition: opacity .25s ease .15s, visibility .25s step-start .15s;
+        }
+
+        .Navbar--dark & {
+            color: skin(white);
+        }
+
+        @include media-breakpoint-up(lg) {
+            display: none;
+        }
+
+        &:before, &:after {
+            content: '';
+            @include position(absolute, 7px null null 1.5rem);
+            position: absolute;
+            background-color: grey(130);
+            display: block;
+            height: 2px;
+            width: 9px;
+
+            .Navbar--dark & {
+                background-color: skin(white);
+            }
+        }
+
+        &:before {
+            transform: rotate(-45deg);
+        }
+
+        &:after {
+            top: 13px;
+            transform: rotate(45deg);
+        }
+    }
+
+    &-searchTrigger {
+        background: transparent;
+        border: none;
+        color: skin(teal);
+        @include size(48px);
+        transition: color .25s ease;
+        cursor: pointer;
+
+        @include media-breakpoint-up(lg) {
+            color: skin(primary);
+            @include size(80px);
+            padding: 2rem 0;
+            margin-left: 2rem;
+
+            &:hover {
+                color: skin(teal);
+            }
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &-preHeader {
+        @include media-breakpoint-up(lg) {
+            background-color: skin(slate);
+            @include position(absolute, 0 0 null 0);
+            height: $navBarPreHeaderHeight;
+            color: skin(white);
+            padding: 0 2.5rem;
+            display: flex;
+        }
+    }
+    
+    &-preHeaderContent {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        @include media-breakpoint-down(lg) {
+            display: none;
+        }
+
+        & > p {
+            margin-bottom: 0;
+
+            + p {
+                margin-left: 1rem;
+            }
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline; 
+            }
+        }
+    }
+
+    &-preHeaderList {
+        @include list-unstyled();
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        > * + * {
+            @include media-breakpoint-up(lg) {
+                margin-left: 2.25rem;
+            }
+        }
+    }
+
+    &-preHeaderLink {
+        color: skin(slate);
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        align-items: center;
+        @include fontSize(8px);
+        max-width: 55px;
+        line-height: 1.3;
+        text-align: center;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        @include media-breakpoint-up(lg) {
+            @include fontSize(16px);
+            color: skin(white);
+            flex-direction: row;
+            align-items: center;
+            max-width: none;
+            text-align: left;
+        }
+
+        svg {
+            @include size(1rem);
+
+            @include media-breakpoint-up(lg) {
+                margin-right: .75rem;
+            } 
+        }
+    }
+}

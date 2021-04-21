@@ -1,0 +1,31 @@
+.Icon {
+    @include size(1rem);
+    margin-bottom: -1px;
+
+    &-list {
+        //display: flex;
+        width: 100%;
+        //flex-wrap: wrap;
+        //justify-content: space-evenly;
+        //align-items: center;
+
+        // Experimenting with grid
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min-content, 10%));
+        grid-gap: 20px 20px;
+    }
+
+    &-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        //flex-basis: 20%;
+        //padding: 20px;
+    }
+
+    &-label {
+        display: block;
+        margin-top: .5rem;
+    }
+}

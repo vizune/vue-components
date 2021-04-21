@@ -1,0 +1,98 @@
+.EmergencyBanner {
+    background: #008C95;
+    color: skin(white);
+    @include fontSize(13px);
+    min-height: $emergencyBannerHeight;
+    z-index: z("emergencyBanner");
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s ease, visibility .25s step-start;
+
+    @include media-breakpoint-up(xl) {
+        @include fontSize(16px);
+    }
+
+    &:not(.has-cookie) {
+        opacity: .8;
+        visibility: visible;
+        transition: opacity .25s ease, visibility .25s step-end;
+    }
+
+    &-link {
+        color: skin(white);
+        font-weight: $fw-base;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+        &:hover {
+            color: skin(white);
+            text-decoration: underline;
+        }
+
+        svg {
+            @include size(24px);
+        }
+    }
+
+    &-close {
+        background: transparent;
+        border: none;
+        color: skin(white);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 0;
+
+        & > * + * {
+            margin-left: .625rem;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &-closeLabel {
+        @include fontSize(13px);
+        text-decoration: underline;
+        white-space: nowrap;
+
+        .EmergencyBanner-close:hover &,
+        .EmergencyBanner-close:focus &{
+            text-decoration: none;
+        }
+
+        @include media-breakpoint-down(lg) {
+            @include sr-only();
+        }
+    }
+
+    &-closeIcon {
+        @include size(24px);
+        border: 2px solid skin(white);
+        border-radius: 100%;
+        position: relative;
+
+        &:before, &:after {
+            content: '';
+            @include size(12px, 2px);
+            @include position(absolute, 50% null null 50%);
+            background-color: skin(white);
+            border-radius: 2px;
+            display: block;
+        }
+
+        &:before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &:after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        .EmergencyBanner-close:focus & {
+            box-shadow: 0 0 6px rgba(#000, 0.5);
+        }
+    }
+}

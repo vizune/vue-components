@@ -1,0 +1,7 @@
+@function skin($colour) {
+    @return map-get($skin, $colour);
+}
+
+@function grey($shade) {
+    @return map-get($grey, $shade);
+}

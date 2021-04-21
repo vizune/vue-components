@@ -1,0 +1,95 @@
+.Accordion {
+    @keyframes sweep {
+        0% {
+            opacity: 0; 
+            transform: translateY(-10px);
+        }
+        100%  {
+            opacity: 1; 
+            transform: translateY(0);
+        }
+    }
+
+    &--darkBackground {
+        padding: 2.5rem 0;
+    }
+
+    &-wrapper {
+        position: relative;
+        background-color: skin(white);
+        border-radius: 10px;
+
+        & + & {
+            margin-top: 1rem;
+        }
+    }
+
+    &-header {
+        font-weight: 500;
+        padding: 2.875rem 2.5rem;
+        position: relative;
+        list-style: none; // firefox
+
+        @include media-breakpoint-up(lg) {
+            @include fontSize(20px);
+        }
+
+        &::-webkit-details-marker {
+            display: none; // chrome
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        // Dark background style
+        .Accordion--background & {
+            background-color: skin(white);
+            padding-left: 2.5rem; 
+        }
+    }
+
+    &-content {
+        padding: 3.125rem 2.5rem;
+        
+        @include media-breakpoint-up(lg) {
+            @include fontSize(20px);
+        }
+
+        .Accordion-item[open] & {
+            animation: sweep .3s ease-in-out;
+        }
+    }
+
+    &-icon {
+        display: block;
+        @include size(33px);
+        border: 2px solid skin(charcoal);
+        border-radius: 100%;
+        @include position(absolute, 44px 35px null null);
+
+        &:before, &:after {
+            content: '';
+            display: block;
+            @include position(absolute, 50% null null 50%);
+            transform: translate(-50%, -50%);
+            @include size(14px, 2px);
+            border-radius: 2px;
+            margin-top: 1px;
+            margin-right: 1px;
+            background-color: grey(130);
+        }
+
+        &:after {
+            transform: translate(-50%, -50%) rotate(90deg);
+            transition: transform .25s ease;
+            will-change: transform;
+        }
+
+        .Accordion-item[open] + & {
+            &:after {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+:root {
+    font-size: $fs-base;
+}
+  
+html,
+body {
+    min-height: 100%;
+    max-width: 100%;
+}
+  
+html {
+    height: 100%;
+}
+  
+body {
+    background-color: skin(background);
+    color: skin(text);
+    font-family: $ff-body;
+    font-weight: $fw-base;
+    line-height: $lh-base;
+    @include fontSize(16px);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  
+    &.body--noOverflow {
+      overflow: hidden;
+    }
+}
+  
+html.has-modal,
+html.has-modal > body {
+    height: 100%;
+    overflow: hidden;
+}
+  

@@ -1,0 +1,85 @@
+// DESIGN SYSTEM FIGMA: 
+// https://www.figma.com/file/NTgdhugZLhz2zhtsNXABC3/Right-at-Home-Designs?node-id=855%3A4676
+
+// Brand colours
+$skin: (
+  primary: #E87722,
+  secondary: #008C95,
+  charcoal: #333333,
+  clay: #F4F4F4,
+  white: #ffffff,
+  terracota: #CF4520,
+  teal: #00778B,
+  slate: #005A70,
+  spring: #C4B200,
+)!default;
+
+$black: #000000;
+$white: #FFFFFF;
+
+$grey: (
+  10: #fafafa,
+  20: #f2f2f2,
+  30: #ececec,
+  40: #e5e5e5,
+  50: #d9d9d9,
+  60: #cccccc,
+  70: #bbbbbb,
+  80: #aeaeae,
+  90: #999999,
+  100:#666666,
+  110:#555555,
+  120:#444444,
+  130:#393939,
+  140:#222222,
+  150:#111111 
+);
+
+$brown: (
+  20: #FAE3D2,
+  40: #F5C8A6,
+  60: #F1AD7A,
+  80: #EC924E,
+  120:#B95F1B,
+  140:#8B4714,
+  160:#5C2F0D,
+  180: #2E1706
+);
+
+$cyan: (
+  20: #CCE8E9,
+  40: #99D1D4,
+  60: #66BABF,
+  80: #32A3AA,
+  120:#007077,
+  140:#005459,
+  160:#00383B,
+  180: #001C1D
+);
+
+
+// System Colours
+$success-highlight: #9DD49D;
+$success: #449D44;
+$success-tint: #3A863A;
+
+$info-highlight: #37A0BE;
+$info: #1180A1;
+$info-tint: #107895;
+
+$warning-highlight: #F58A4B;
+$warning: #DA611E;
+$warning-tint: #C2561A;
+
+$danger-highlight: #CD5849;
+$danger: #AC2A1A;
+$danger-tint: #9A2515;
+
+// Social Colours
+$facebook-blue: #3b5998;
+$twitter-blue: #55acee;
+$linkedin-blue: #0077b5;
+$instagram-purple: #8941a7;
+$gplus-red: #d44c34;
+$youtube-red: #cd3a28;
+$pinterest-red: #cb2a24;

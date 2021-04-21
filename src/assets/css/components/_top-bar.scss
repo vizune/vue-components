@@ -1,0 +1,35 @@
+.TopBar {
+    background-color: skin(slate);
+    color: skin(white);
+    padding: 0 2.5rem;
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+
+    a {
+        color: skin(white);
+        text-decoration: none;
+
+        &:hover, &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    &-button {
+        background-color: transparent;
+        appearance: none;
+        color: skin(white);
+        border: none;
+        display: flex;
+        align-items: center;
+
+        svg {
+            @include size(17px);
+            margin-right: .8rem;
+        }
+
+        & + & {
+            margin-left: 2rem;
+        }
+    }
+}

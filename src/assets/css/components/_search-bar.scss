@@ -1,0 +1,80 @@
+.SearchBar {
+    color: skin(primary);
+
+    &-wrapper {
+        padding: 1rem;
+
+        @include media-breakpoint-up(lg) {
+            padding: 2rem;
+        }
+    }
+
+    &-input {
+        padding: 12px 0 12px 50px;
+        border: 1px solid grey(60);
+        border-radius: 10px;
+        height: 26px;
+        min-width: calc(100vw - 266px);
+        margin-right: .5rem;
+
+        @include media-breakpoint-up(lg) {
+            min-width: 450px;
+            margin-right: 40px;
+        }
+
+        &:focus {
+            border: 1px solid grey(80);
+            box-shadow: 0 0 5px grey(50);
+            outline: none;
+        }
+    }
+
+    &-btn {
+        height: 50px;
+        padding: .75rem;
+        background-color: skin(terracota);
+        border: 1px solid skin(terracota);
+        color: skin(white);
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 800;
+        width: 150px;
+    }
+
+    &-icon {
+        @include position(absolute, 50% null null 1rem);
+        transform: translateY(-50%);
+        @include size(24px);
+    }
+
+    &-label {
+        font-weight: 900;
+        @include fontSize(16px);
+        color: skin(white);
+
+        @include media-breakpoint-up(lg) {
+            @include fontSize(25px);
+        }
+    }
+
+    .Navbar + & {
+        background-color: skin(slate);
+        height: 110px;
+
+        transform: scaleY(0);
+        transform-origin: top center;
+        opacity: 0;
+        visibility: hidden;
+        transition: transform .25s ease, min-height .5s ease, opacity .25s ease, visibility .25s step-end;
+        min-height: 0;
+
+
+        &.is-open {
+            transform: scaleY(1);
+            min-height: 110px;
+            opacity: 1;
+            visibility: visible;
+            transition: transform .25s ease, min-height .5s ease-in-out, opacity .25s ease, visibility .25s step-start;
+        }
+    }
+}

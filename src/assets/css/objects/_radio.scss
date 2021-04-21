@@ -1,0 +1,58 @@
+.Radio {
+  display: flex;
+  align-items: center;
+
+  &-control {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &-check {
+    position: relative;
+    @include size(1.5rem);
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid skin(light);
+    background-color: skin(white);
+    flex-shrink: 0;
+    margin-right: .75rem;
+
+    &::before {
+      @include position(absolute, 3px);
+      content: "";
+      border-radius: 50%;
+      background-color: skin(primary);
+      will-change: transform;
+      transform: scale(0);
+      transition: .3s transform ease;
+    }
+
+    :checked + &::before {
+      transform: scale(1);
+    }
+
+    :focus + & {
+      box-shadow: 0 0 6px rgba(skin(primary), 0.5);
+    }
+  }
+
+  &-list {
+
+    & > * + * {
+      margin-top: 1rem;
+    }
+
+    &--inline {
+      @include media-breakpoint-up(lg) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        & > * + * {
+          margin-top: 0;
+          margin-left: 1.5rem;
+        }
+      }
+    }
+  }
+}

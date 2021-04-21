@@ -1,0 +1,64 @@
+.Tabs {
+    padding: 2.5rem 0;
+
+    &-nav {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &-navLink {
+        border-bottom: none;
+        text-decoration: none;
+        padding: 1.438rem;
+        min-width: 125px;
+        @include fontSize(16px);
+        text-align: center;
+        color: skin(terracota);
+        border-bottom: 2px solid skin(terracota);
+        font-weight: 500;
+
+        @include media-breakpoint-up(lg) {
+            @include fontSize(20px);
+            padding: 1.125rem;
+        }
+
+        &:first-child {
+            text-align: right;
+        }
+
+        &:last-child {
+            text-align: left;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &.is-active {
+            color: skin(charcoal);
+            pointer-events: none;
+            border-color: skin(charcoal);
+        }
+    }
+
+    &-wrapper {
+        position: relative;
+    }
+
+    &-item {
+        display: none;
+
+        &.is-active {
+            display: block;
+        }
+    }
+
+    &-itemTitle {
+        font-family: $ff-head;
+        @include fontSize(26px);
+
+        @include media-breakpoint-up(md) {
+            @include fontSize(32px);
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.Caret {
+    display: block;
+    
+    &:before, &:after {
+        content: '';
+        background-color: skin(white);
+        border-radius: 1px;
+        display: block;
+        @include size(11px, 2px);
+        @include position(absolute, 50% null null);
+        transition: transform .25s ease;
+        transform-origin: center;
+    }
+
+    &:before {
+        right: 27px;
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    &:after {
+        right: 20px;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+    .is-open & {
+        &:before {
+            transform: translateY(-50%) rotate(-45deg);
+        }
+
+        &:after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+    }
+
+    .LinkList-heading & {
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+}

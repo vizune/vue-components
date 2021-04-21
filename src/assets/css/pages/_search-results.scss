@@ -1,0 +1,118 @@
+.SearchResults {
+    &-header {
+        background-color: grey(20);
+        padding: 3.5rem 0 1.25rem;
+    }
+
+    &-title {
+        margin: 0 0 1.25rem;
+    }
+
+    &-info {
+        font-style: italic;
+        margin: 1rem 0 0;
+    }
+
+    &-main {
+        padding: 2.25rem 0;
+    }
+
+    &-item {
+        margin-bottom: 2rem;
+    }
+
+    &-itemHeader {
+        margin-bottom: .5rem;
+    }
+
+    &-itemTitle {
+        font-size: 1.25rem;
+        margin: 0;
+    }
+
+    &-itemUrl {
+        color: grey(130);
+        font-size: 0.875rem;
+    }
+
+    &-itemFooter {
+        color: grey(100);
+        font-size: .875rem;
+        margin-top: .625rem;
+
+        display: flex;
+        flex-direction: column;
+
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+        }
+
+        * {
+            display: block;
+        }
+
+        > * + * {
+            margin-left: .75rem;
+
+            &:before {
+                @include media-breakpoint-up(md) {
+                    content: '\007C';
+                    margin-right: .75rem;
+                }
+            }
+        }
+    }
+
+    &-details {
+        margin-bottom: 2rem;
+    }
+
+    &-summary {
+        border: 1px solid grey(40);
+        border-left: 3px solid skin(primary);
+        padding: 1.5rem;
+        list-style: none; // firefox
+        display: flex;
+        align-items: center;
+
+        &::-webkit-details-marker {
+            display: none; // chrome
+        }
+        
+        @include media-breakpoint-up(md) {
+            pointer-events: none;
+            border: none;
+            padding: 0;
+            display: block;
+        }
+
+        &:before {
+            content: '>';
+            color: skin(primary);
+            margin-right: 1.5rem;
+            font-family: monospace;
+            transition: transform .25s ease;
+            will-change: transform;
+
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+        }
+
+        .SearchResults-details[open] & {
+            &:before {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    &-summaryHeading {
+        font-size: 1rem;
+        margin-bottom: 0;
+
+        @include media-breakpoint-up(md) {
+            font-size: 1.25rem;
+            margin-bottom: .75rem;
+        }
+    }
+}

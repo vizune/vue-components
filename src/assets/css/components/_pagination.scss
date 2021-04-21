@@ -1,0 +1,54 @@
+.Pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include list-unstyled();
+
+    &-item {
+        cursor: pointer;
+        display: flex;
+        @include size(40px);
+
+        &:first-child {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            overflow: hidden;
+        }
+
+        &:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            overflow: hidden;
+        }
+
+        &.is-disabled {
+            opacity: .5;
+        }
+    }
+
+    &-link {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        background-color: skin(white);
+        color: skin(terracota);
+        @include size(100%);
+        transition: background-color .2s ease, color .2s ease;
+
+        .Pagination-item--number.is-active & {
+            background-color: skin(terracota);
+            color: skin(white);
+            text-decoration: none;
+        }
+
+        &:hover {
+            background-color: #D96A4D;
+            color: skin(white);
+        }
+    }
+
+    &-icon {
+        @include size(24px);
+    }
+}

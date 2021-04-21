@@ -1,0 +1,63 @@
+.Table {
+    border-spacing: 0;
+    width: 100%;
+    min-width: 720px; // TO DO: Update value with standard container width
+
+    &-wrapper {
+        overflow-x: auto;
+
+        @include media-breakpoint-up(md) {
+            @include fontSize(20px);
+            padding: 1.375rem 0.625rem;
+        }
+    }
+
+    &-head {
+        th {
+            border-bottom: 1px solid grey(100);
+            color: grey(90);
+            @include fontSize(18px);
+            font-weight: $fw-base;
+            line-height: 1;
+            padding: 1.125rem 0.625rem;
+            text-align: left;
+
+            @include media-breakpoint-up(md) {
+                @include fontSize(20px);
+                padding: 1.375rem 0.625rem;
+            }
+
+            .Table--dark & {
+                border-color: grey(90);
+                color: skin(white);
+            }
+        }
+    }
+
+    &-body {
+        td {
+            border-bottom: 1px solid grey(60);
+            color: grey(130);
+            @include fontSize(14px);
+            line-height: 1;
+            padding: 1.125rem 0.625rem;
+            text-align: left;
+
+            @include media-breakpoint-up(md) {
+                @include fontSize(16px);
+                padding: 1.25rem 0.75rem;
+            }
+
+            .Table--dark & {
+                border-color: grey(100);
+                color: grey(70);
+            }
+        }
+    }
+
+    &-row {
+        .Table--stripes &:nth-child(even) {
+            background-color: grey(20);
+        }
+    }
+}

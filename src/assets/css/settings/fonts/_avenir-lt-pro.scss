@@ -1,0 +1,36 @@
+$font-path-hs: "/assets/fonts/avenir-lt-pro";
+
+@include font-face(
+  $font-family: "Avenir LT Pro",
+  $file-path: $font-path-hs + "Light"
+) {
+  font-weight: 300;
+}
+
+@include font-face(
+  $font-family: "Avenir LT Pro",
+  $file-path: $font-path-hs + "Book"
+) {
+  font-weight: 400;
+}
+
+@include font-face(
+  $font-family: "Avenir LT Pro",
+  $file-path: $font-path-hs + "Medium"
+) {
+  font-weight: 500;
+}
+
+@include font-face(
+  $font-family: "Avenir LT Pro",
+  $file-path: $font-path-hs + "Heavy"
+) {
+  font-weight: 800;
+}
+
+@include font-face(
+  $font-family: "Avenir LT Pro",
+  $file-path: $font-path-hs + "Black"
+) {
+  font-weight: 900;
+}

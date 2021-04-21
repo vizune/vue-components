@@ -1,0 +1,35 @@
+.Card {
+    $card-border-radius: 6px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: skin(white);
+    background-clip: border-box;
+    border: 1px solid grey(50);
+    border-radius: $card-border-radius;
+    overflow: hidden;
+    color: grey(130);
+
+    &-url {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &-title {
+        font-weight: 900;
+        @include fontSize(20px);
+    }
+
+    &-body {
+        flex: 1 1 auto;
+        padding: 1.5rem;
+        @include fontSize(13px);
+        font-weight: 300;
+    }
+
+    &-image {
+        width: 100%;
+    }
+}

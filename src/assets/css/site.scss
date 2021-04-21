@@ -1,0 +1,71 @@
+// GLOBAL STYLING
+@import "resources";
+
+// ITCSS: Elements
+// styling for bare HTML elements (like H1, A, etc.). 
+// These come with default styling from the browser so we can redefine them here.
+@import "elements/body";
+@import "elements/typography";
+@import "elements/form";
+@import "elements/button";
+@import "elements/textarea";
+@import "elements/input";
+@import "elements/table";
+@import "elements/image";
+@import "elements/select";
+@import "elements/list";
+@import "elements/video";
+
+// ITCSS: Objects
+// class-based selectors which define undecorated design patterns
+// e.g. media object, list, radio button
+@import "objects/layout";
+@import "objects/checkbox";
+@import "objects/radio";
+@import "objects/file-upload";
+@import "objects/datepicker";
+@import "objects/toggle";
+@import "objects/tooltip";
+@import "objects/true-responsive-table"; // data-label version
+@import "objects/container";
+@import "objects/tabs";
+
+// ITCSS: Components
+// specific UI components
+@import "components/site";
+@import "components/top-bar";
+@import "components/navbar";
+@import "components/footer";
+@import "components/emergency-banner";
+@import "components/breadcrumb";
+@import "components/carousel";
+@import "components/pagination";
+@import "components/modal";
+@import "components/social";
+@import "components/spotlight";
+@import "components/accordion";
+@import "components/mini-form";
+@import "components/search-bar";
+@import "components/status";
+@import "components/card";
+@import "components/badge";
+@import "components/page-count-filter";
+@import "components/phone-number";
+@import "components/alternating-text-image";
+@import "components/trust-logos";
+@import "components/image-cta-area";
+@import "components/image-block";
+@import "components/download-block";
+@import "components/image-overlay";
+
+// Pages
+@import "pages/article-listing";
+@import "pages/search-results";
+@import "pages/sitemap";
+
+// ITCSS: Utilities 
+// utilities and helper classes with ability to override anything which goes before in the triangle
+@import "utilities/pseudo-bg";
+@import "utilities/bg";
+@import "utilities/colour";
+@import "utilities/position";

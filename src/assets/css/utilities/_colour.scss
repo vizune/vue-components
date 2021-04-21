@@ -1,0 +1,71 @@
+// TO DO: Clever sass mixin ¯\_(ツ)_/¯
+// will probably need to restructure color sass variables into one list
+.u-cl {
+    &-primary {
+        color: skin(primary);
+    }
+
+    &-secondary {
+        color: skin(secondary);
+    }
+
+    &-grey10 {
+        color: grey(10);
+    }
+
+    &-grey20 {
+        color: grey(20);
+    }
+
+    &-grey30 {
+        color: grey(30);
+    }
+
+    &-grey40 {
+        color: grey(40);
+    }
+
+    &-grey50 {
+        color: grey(50);
+    }
+
+    &-grey60 {
+        color: grey(60);
+    }
+
+    &-grey70 {
+        color: grey(70);
+    }
+
+    &-grey80 {
+        color: grey(80);
+    }
+
+    &-grey90 {
+        color: grey(90);
+    }
+
+    &-grey100 {
+        color: grey(100);
+    }
+
+    &-grey110 {
+        color: grey(110);
+    }
+
+    &-grey120 {
+        color: grey(120);
+    }
+
+    &-grey130 {
+        color: grey(130);
+    }
+
+    &-grey140 {
+        color: grey(140);
+    }
+
+    &-grey150 {
+        color: grey(150);
+    }
+}

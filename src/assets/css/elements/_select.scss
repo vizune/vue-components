@@ -1,0 +1,12 @@
+.Select {
+    width: 100%;
+    border: 1px solid skin(light);
+    border-radius: 3px;
+    padding: .75rem;
+
+    &:focus {
+        border: 1px solid grey(80);
+        box-shadow: 0 0 5px grey(50);
+        outline: none;
+    }
+}

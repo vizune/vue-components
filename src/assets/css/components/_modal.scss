@@ -1,0 +1,112 @@
+.Modal {
+    @keyframes fadein {
+        0% {
+            opacity: 0; 
+            transform: translate(-50%, .75rem) scale(.95);
+        }
+        100%  {
+            opacity: 1; 
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes fadeout {
+        0%  {
+            opacity: 1; 
+            transform: translateX(-50%);
+        }
+        100% {
+            opacity: 0; 
+            transform: translate(-50%, .75rem) scale(.95);
+        }
+    }
+
+    @include position(fixed, 20% null null 50%);
+    transform: translateX(-50%);
+    border: none;
+    box-shadow: 0 16px 48px 16px rgba(0,0,0,0.17);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 420px;
+    min-height: 235px;
+    margin: 0;
+    padding: 1.5rem;
+    visibility: hidden;
+    animation: fadeout .3s ease-in-out;
+    z-index: z("modal");
+    max-height: 65vh;
+    overflow-y: auto;
+    
+    &[open] {
+        visibility: visible;
+       animation: fadein .3s ease-in-out;
+    }
+
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &-title {
+        font-size: 1.25rem;
+        padding-right: 1rem;
+    }
+
+    &-close {
+        display: block;
+        position: relative;
+        @include size(12px);
+        padding: .75rem;
+        margin-right: -.25rem;
+
+        // Clearing button browser default css
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+
+        &:before, &:after {
+            content: '';
+            @include position(absolute, 50% null null 50%);
+            @include size(12px, 2px);
+            border-radius: 2px;
+            background-color: grey(130);
+            display: block;
+        }
+
+        &:before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &:after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+
+     &-content {
+         @include fontSize(13px);
+         margin-bottom: 1.5rem;
+     }
+
+     &-footer {
+         align-self: flex-end;
+         padding-bottom: 1.5rem;
+     }
+
+     &-button {
+         background-color: grey(100);
+         border: 1px solid grey(100);
+         border-radius: 7px;
+         color: skin(white);
+         @include fontSize(13px);
+         font-weight: $fw-bold;
+         padding: .75rem 1.75rem;
+         transition: background-color .25s ease, color .25s ease;
+
+         &:hover {
+             background-color: skin(white);
+             color: grey(100);
+         }
+     }
+}

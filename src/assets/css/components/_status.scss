@@ -1,0 +1,27 @@
+.Status {
+    &-iconContainer {
+        display: none;
+        align-items: center;
+        margin-left: -2rem;
+
+        .Status--active & {
+            display: flex !important;
+        }
+    }
+
+    &-icon {
+        animation: scaleBounce .4s linear forwards;
+
+        .Status--success & {
+            stroke: $success;
+        }
+
+        .Status--warning & {
+            stroke: $warning;
+        }
+
+        .Status--danger & {
+            stroke: $danger;
+        }
+    }
+}

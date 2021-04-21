@@ -1,0 +1,172 @@
+.Footer {
+    background-color: skin(slate);
+    color: skin(white);
+
+    /*
+    &--dark {
+        background-color: grey(140);
+        color: skin(white);
+        border-color: grey(140);
+    }
+
+    &--columns {
+        padding: 2rem 0 0;
+    }
+
+    &--simple {
+        @include media-breakpoint-up(lg) {
+            padding: 3.125rem 0 0;
+        }
+    }
+    */
+
+    &-links {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 3rem;
+
+        @include media-breakpoint-up(lg) {
+            flex-wrap: nowrap;
+            padding-bottom: 4rem;
+        } 
+    }
+
+    &-listColumn {
+        width: 100%;
+
+        @include media-breakpoint-up(lg) {
+            width: auto;
+            padding-right: 50px;
+        }
+
+        & + & {
+            margin-top: 1.5rem;
+
+            @include media-breakpoint-up(lg) {
+                margin-top: 0;
+            }
+        }
+    }
+
+   &-listHeader {
+       display: flex;
+       justify-content: space-between;
+   }
+
+    &-listHeading {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        @include fontSize(20px);
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &-listButton {
+        background: skin(white);
+        border: 2px solid grey(100);
+        border-radius: 100%;
+        @include size(24px);
+        text-indent: -99999px;
+        position: relative;
+
+        @include media-breakpoint-up(lg) {
+            display: none;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 6px rgba(skin(primary), 0.75);
+        }
+
+        &:before, &:after {
+            content: '';
+            background-color: grey(100);
+            display: block;
+            @include size(11px, 2px);
+            @include position(absolute, 50% null null 50%);
+            transition: transform .25s ease;
+            transform-origin: center;
+        }
+
+        &:before {
+            transform: translate(-50%, -50%);
+        }
+
+        &:after {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        &.is-open {
+            &:after {
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    &-listLinks {
+        list-style: none;
+        padding: 0 2rem 0 1rem;
+
+        @include media-breakpoint-up(lg) {
+            padding-left: 0;
+        }
+
+        & > * + * {
+            margin-top: 1rem;
+        }
+    }
+
+    &-listText {
+        color: skin(white);
+        display: block;
+        font-size: .813rem;
+        line-height: 1.3;
+        transition: color .25s ease;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &-contactDetails {
+      color: currentColor;
+    }
+
+    &-logoList {
+        display: flex;
+        align-items: center;
+        @include list-unstyled();
+
+        & > * + * {
+            margin-right: .5rem;
+        }
+
+        li {
+            background-color: skin(white);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            max-height: 45px;
+        }
+    }
+
+    &-info {
+        background-color: skin(teal);
+
+        @include media-breakpoint-up(md) {
+            text-align: left;
+        }
+    }
+
+    &-map {
+        @include size(100%, 190px);
+    }
+}

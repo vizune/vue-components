@@ -1,0 +1,22 @@
+.DownloadBlock {
+    background-color: skin(teal);
+    color: skin(white);
+    padding: .625rem 1.625rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: background-color .25s ease;
+    max-width: 310px;
+
+    @include media-breakpoint-up(lg) {
+        max-width: 440px;
+    }
+
+    &:hover {
+        background-color: skin(slate);
+    }
+
+    &-icon {
+        @include size(1.5rem);
+    }
+}

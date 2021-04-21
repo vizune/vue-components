@@ -1,0 +1,33 @@
+.ImageOverlay {
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+
+    &-media {
+        z-index: z("below");
+        position: relative;
+
+        picture {
+            @include position(absolute, 50% null null 50%);
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &-content {
+        @include position(absolute, 0);
+        z-index: z("above");
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: skin(white);
+
+        p {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &-fade {
+        @include position(absolute, 0);
+        z-index: z("base");
+    }
+}

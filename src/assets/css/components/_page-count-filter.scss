@@ -1,0 +1,42 @@
+.PageCountFilter {
+    display: flex;
+    align-items: center;
+
+    @include media-breakpoint-up(lg) {
+        justify-content: flex-end;
+    }
+
+    ul {
+        margin: 0;
+        @include list-unstyled();
+        display: flex;
+
+        > * {
+            margin-left: .625rem;
+        }
+    }
+
+    &-button {
+        background: none;
+        color: skin(primary);
+        font-weight: $fw-bold;
+        text-decoration: underline;
+        border: 1px solid transparent;
+        padding: .625rem;
+        cursor: pointer;
+        transition: border-color .25s ease, background-color .25s ease, color .25s ease;
+  
+        &.is-active {
+            background-color: skin(primary);
+            color: skin(white);
+            font-weight: $fw-base;
+            text-decoration: none;
+            pointer-events: none;
+        }
+  
+        &:hover {
+            border-color: grey(30);
+            text-decoration: none;
+        }
+    }
+}

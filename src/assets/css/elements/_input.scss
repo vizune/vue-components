@@ -1,0 +1,75 @@
+.Input {
+    width:100%;
+    border: 1px solid skin(light);
+    border-radius: 3px;
+    padding: .75rem;
+
+    &:focus {
+        border: 1px solid grey(80);
+        box-shadow: 0 0 5px grey(50);
+        outline: none;
+    }
+
+    &.is-invalid {
+        border: 1px solid $danger;
+        &:focus {
+            border: 1px solid $danger;
+            box-shadow: 0 0 3px $danger;
+            outline: none;
+        }
+    }
+
+    .Status--active & {
+        padding-right: 2.5rem;
+
+        &::placeholder {
+            opacity: 0.5;
+        }   
+    }
+
+    .Status--disabled & {
+        opacity: 0.5;
+    }
+
+    .Status-success & {
+        border: 1px solid $success;   
+
+        &:focus {
+            border: 1px solid $success;
+            box-shadow: 0 0 3px $success;
+            outline: none;
+        }
+
+        &::placeholder {
+            color: $success;
+        }  
+    }
+
+    .Status--warning & {
+        border: 1px solid $warning;
+
+        &:focus {
+            border: 1px solid $warning;
+            box-shadow: 0 0 3px $warning;
+            outline: none;
+        }
+
+        &::placeholder {
+            color: $warning;
+        }
+    }
+
+    .Status--danger & {
+        border: 1px solid $danger;
+
+        &:focus {
+            border: 1px solid $danger;
+            box-shadow: 0 0 3px $danger;
+            outline: none;
+        }
+
+        &::placeholder {
+            color: $danger;
+        }
+    }
+}

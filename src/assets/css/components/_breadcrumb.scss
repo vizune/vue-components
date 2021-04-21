@@ -1,0 +1,86 @@
+.Breadcrumb {
+    @include position(absolute, 10px 0 null 0);
+    display: none;
+
+    @include media-breakpoint-up(md) {
+        display: block;
+    }
+
+    .HeroBanner + & {
+        color: skin(white);
+    }
+
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        @include list-unstyled();
+        margin: 0;
+
+        & > * + * {
+            margin-left: 1rem;
+        }
+    }
+
+    &-item {
+        font-weight: $fw-bold;
+        margin-right: 1rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        & + & {
+            position: relative;
+
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                width: 1.6px;
+                height: 5px;
+                background-color: grey(130);
+                left: -1rem;
+                border-radius: 1px;
+                transition: transform .25s ease;
+                transform-origin: center;
+            }
+
+            &:before {
+                top: calc(50% - 1px);
+                transform: translateY(-50%) rotate(-45deg);
+            }
+
+            &:after {
+                top: calc(50% + 2px);
+                transform: translateY(-50%) rotate(45deg);
+            }
+        }
+
+        &:hover + & {
+            &:before {
+                transform: translate(-.25rem, -50%) rotate(45deg);
+            }
+
+            &:after {
+                transform: translate(-.25rem, -50%) rotate(-45deg);
+            }
+        }
+    }
+
+    &-link {
+        color: skin(primary);
+        display: block;
+        @include fontSize(16px);
+        font-weight: $fw-medium;
+        text-decoration: none;
+        transition: transform .25s ease, color .25s ease;
+
+        &:hover {
+            color: skin(secondary);
+            transform: translateX(1px);
+        }
+
+        .HeroBanner + .Breadcrumb & {
+            color: skin(white);
+        }
+    }
+}

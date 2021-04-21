@@ -1,0 +1,53 @@
+.u-pseudo-bg {
+    &:before {
+        content: '';
+        @include position(absolute, 0 0 0 -50vw);
+        background-color: skin(background);
+        width: 150vw;
+        z-index: -1;
+    }
+
+    // TO DO: Clever sass mixin ¯\_(ツ)_/¯
+    // will probably need to restructure color sass variables into one list
+    // same for background utility
+    &--white {
+        &:before {
+            background-color: skin(white);
+        }
+    }
+
+    &--dark {
+        &:before {
+            background-color: grey(150);
+        }
+    }
+
+    &--primary {
+        &:before {
+            background-color: skin(primary);
+        }
+    }
+
+    &--gridSection {
+        // If this utility class is used on a grid layout component
+        // it will need extra padding within the component
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+
+        .Layout-component + .Layout-component > & {
+            padding-top: 0;
+        }
+
+        .Layout-item:last-child .Layout-component:last-child & {
+            // Probably a better way but...
+            // If the last component of the page has a psuedo background
+            // Shift the component to cover grey rectangle caused by last layout-item margin-bottom
+            margin-top: -5rem;
+            transform: translateY(2.5rem);
+            padding-top: 2.5rem;
+        }
+
+        // TO DO: Spacing between two components with pseudo backgrounds
+        // may need JS solution, difficult to cascade down with CSS selectors
+    }
+}

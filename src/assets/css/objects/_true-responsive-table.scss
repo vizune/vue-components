@@ -1,0 +1,31 @@
+.TrueResponsiveTable {
+    // Standard "Responsive Table" adds a horizontal scrollbar
+    // "TRUE" responsive table uses data-label attribues and flex
+    // to turn table into a single column with rows of data
+    // this class name is used in addition to .Table to reduce duplicate styling
+    // don't use <div class="Table-wrapper"> around .Table for this version
+    // data-label attribute is added to tbody > td with th name
+
+    @include media-breakpoint-down(md) {
+        thead {
+            display: none;
+        }
+        tbody {
+            tr {
+                display: flex;
+                flex-direction: column;
+
+                td {
+                    display: block;
+
+                    &:before {
+                        content: attr(data-label);
+                        display: block;
+                        @include fontSize(12px);
+                        font-weight: $fw-bold;
+                    }
+                }
+            }
+        }
+    }
+}

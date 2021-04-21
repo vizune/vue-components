@@ -1,0 +1,33 @@
+$ff-stack: "Avenir LT Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+$ff-head: $ff-stack !default;
+$ff-body: $ff-stack !default;
+$ff-icon: "icons";
+
+$fs-base: 16px;
+
+$fs-display1: 95px;
+$fs-display2: 76px;
+$fs-h1: 61px;
+$fs-h2: 49px;
+$fs-h3: 39px;
+$fs-h4: 31px;
+$fs-h5: 25px;
+$fs-h6: 20px;
+
+$fs-tiny: 10px;
+$fs-small: 13px;
+$fs-large: 20px;
+
+$fw-thin: 300;
+$fw-base: 400;
+$fw-medium: 500;
+$fw-bold: 800;
+$fw-black: 900;
+
+// IF MULTIPLE SKINS REQUIRED
+//$fw-head: $fw-skin;
+// ELSE
+$fw-head: 900;
+
+$lh-base: 1.6;
+$lh-head: 1.3;

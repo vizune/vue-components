@@ -1,0 +1,27 @@
+.MiniForm {
+    display: flex;
+    align-items: center;
+
+    &-input {
+    max-width: 100%;
+    min-width: 50%;
+    padding: 15px;
+    border: 1px solid skin(light);
+    border-radius: 2rem;
+
+        &:focus {
+            border: 1px solid grey(80);
+            box-shadow: 0 0 5px grey(50);
+            outline: none;
+        }
+    }
+
+    &-submit {
+        width: calc(2rem + #{$fs-base});
+        height: calc(2rem + #{$fs-base});
+        margin-left: calc(-2rem + -#{$fs-base});
+        color: skin(white);
+        border-radius: 100%;
+        padding: 0;
+    }
+}

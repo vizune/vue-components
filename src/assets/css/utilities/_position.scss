@@ -1,0 +1,35 @@
+.u-full {
+    @include position(absolute, 0);
+}
+
+.u-bottom {
+    @include position(absolute, null null 0 null );
+}
+  
+.u-center {
+    @include position(absolute, 50% null null 50%);
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+}
+
+.u-bg-cover {
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.u-object-cover {
+    @include size(100%);
+    object-fit: cover;
+    object-position: center;
+}
+
+.u-cover {
+    @include position(absolute, 50% null null 50%);
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%,-50%);
+    height: auto;
+    width: auto;
+}

@@ -1,0 +1,22 @@
+.Textarea {
+    width:100%;
+    padding: 15px;
+    border: 1px solid skin(light);
+    border-radius: 3px;
+    resize: vertical;
+
+    &:focus {
+        border: 1px solid grey(80);
+        box-shadow: 0 0 5px grey(50);
+        outline: none;
+    }
+
+    &.is-invalid{
+        border: 1px solid $danger;
+        &:focus {
+            border: 1px solid $danger;
+            box-shadow: 0 0 3px $danger;
+            outline: none;
+        }
+    }
+}

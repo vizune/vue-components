@@ -1,0 +1,16 @@
+// http://www.stubbornella.org/content/2013/07/01/easy-peasy-rem-conversion-with-sass/
+// Calculate rem based on base font
+// Helps speed up development time
+// Improves CSS readability CSS
+// Provides fallback support for rem
+
+@function calculateRem($size) {
+    $remSize: $size / $fs-base;
+    @return #{$remSize}rem;
+}
+
+// How to use: @include fontSize(32px);
+@mixin fontSize($size) {
+    font-size: $size; // Fallback in px
+    font-size: calculateRem($size);
+}

@@ -1,0 +1,31 @@
+.Badge {
+    display: inline-block;
+    padding: .25em .4em;
+    @include fontSize(13px);
+    font-weight: 400;
+    line-height: 1;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    color: grey(130);
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+
+    &--primary {
+        color: skin(white);
+        background-color: skin(primary);
+        text-align: center;
+    }
+
+    &--secondary {
+        color: skin(white);
+        background-color: skin(secondary);
+        text-align: center;
+    }
+
+    svg {
+        @include size(.625rem);
+        margin-right: .625rem;
+    }
+}

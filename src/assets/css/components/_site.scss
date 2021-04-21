@@ -1,0 +1,21 @@
+.Site {
+    // Sticky footer IE proof
+    display: flex; 
+    
+    &-body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+
+        // If emergency banner is above navbar compoent
+        // margin-top: $emergencyBannerHeight;
+    }
+    &-wrapper {
+        flex-grow: 1;
+    }
+    &-footer {
+        flex-shrink: 0;
+    }
+}

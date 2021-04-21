@@ -1,0 +1,213 @@
+.Social {
+    &--border {
+        padding: 2rem 0;
+        border-top: 1px solid grey(40);
+        border-bottom: 1px solid grey(40);
+
+        .StandardsPage-column & {
+            border-color: grey(60);
+        }
+    }
+
+    &-heading {
+        font-family: $ff-body;
+        @include fontSize(18px);
+    }
+
+    &-wrapper {
+        display: flex;
+        justify-content: center;
+
+        @include media-breakpoint-up(md) {
+          justify-content: flex-end;
+        }
+
+        .Social--mobileStacked & {
+            flex-direction: column;
+
+            @include media-breakpoint-up(lg) {
+                flex-direction: row;
+            }
+        }
+
+        & > * + * {
+            margin-left: .625rem;
+
+            .Social--mobileStacked & {
+                margin-top: .625rem;
+                margin-left: 0;
+
+                @include media-breakpoint-up(lg) {
+                    margin-top: 0;
+                    margin-left: .625rem;
+                }
+            }
+        }
+    }
+
+    &-icon {
+        color: currentColor;
+        background-color: color(primary);
+        border: 1px solid currentColor;
+        border-radius: 100%;
+        margin: 0.5rem;
+        padding: 7px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .25s ease;
+        @include size(1.875rem);
+
+        &:hover {
+          transform: scale(1.15);
+        }
+
+        .Footer & {
+          @include size(2.5rem);
+        }
+
+        @include media-breakpoint-up(lg) {
+            @include size(2.5rem);
+            padding: 10px;
+
+            .Footer & {
+              @include size(3rem);
+            }
+        }
+
+        svg {
+            @include size(100%);
+
+            use {
+                transition: color .25s ease;
+
+                .Social--white & {
+                    color: color(primary);
+                }
+            }
+        }
+
+        .Social--white & {
+            background-color: skin(white);
+
+            &:hover {
+                background-color: color(primary);
+
+                svg use {
+                    color: skin(white);
+                }
+            }
+        }
+
+        &--facebook {
+            &:hover {
+                background-color: $facebook-blue;
+            }
+        }
+
+        &--linkedin {
+            &:hover {
+                background-color: $linkedin-blue;
+            }
+        }
+
+        &--twitter {
+            &:hover {
+                background-color: $twitter-blue;
+            }
+        }
+
+        &--secondary {
+            &:hover {
+                background-color: skin(secondary);
+            }
+        }
+    }
+
+    &-button {
+        border: 1px solid transparent;
+        border-radius: 5px;
+        color: skin(white);
+        @include fontSize(14px);
+        font-weight: $fw-base;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .35rem .75rem;
+        transition: .25s background-color ease, color .25s ease;
+
+        > svg {
+            margin-right: .5rem;
+        }
+
+        &--facebook {
+            border-color: $facebook-blue;
+            background-color: $facebook-blue;
+
+            &:hover {
+                background-color: skin(white);
+                color: $facebook-blue;
+            }
+        }
+
+        &--linkedin {
+            border-color: $linkedin-blue;
+            background-color: $linkedin-blue;
+
+            &:hover {
+                background-color: skin(white);
+                color: $linkedin-blue;
+            }
+        }
+
+        &--twitter {
+            border-color: $twitter-blue;
+            background-color: $twitter-blue;
+
+            &:hover {
+                background-color: skin(white);
+                color: $twitter-blue;
+            }
+        }
+
+        &--secondary {
+            border-color: skin(secondary);
+            background-color: skin(secondary);
+
+            &:hover {
+                background-color: skin(white);
+                color: skin(secondary);
+            }
+        }
+
+        svg {
+            @include size(1rem);
+        }
+    }
+
+    &-copy {
+        &:before {
+            content: 'URL copied to clipboard';
+            position: absolute;
+            margin-top: -2.5rem;
+            padding: .25rem .5rem;
+            background: grey(130);
+            color: skin(white);
+            border-radius: 20px;
+            @include fontSize(11px);
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .25s ease, visibility .25s step-end;
+        }
+
+        &.is-copied {
+            &:before {
+                opacity: 1;
+                visibility: visible;
+                transition: opacity .25s ease, visibility .25s step-end;
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+h1,h2,h3,h4,h5,h6 {
+    margin-bottom: 0.75rem;
+    font-family: $ff-head;
+    font-weight: $fw-head;
+    line-height: $lh-head;
+    color: inherit;
+}
+  
+h1 {
+  font-size: $fs-h1;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: $fs-h2;
+}
+
+h3 {
+  font-size: $fs-h3;
+}
+
+h4 {
+  font-size: $fs-h4;
+}
+
+h5 {
+  font-size: $fs-h5;
+}
+
+h6 {
+  font-size: $fs-h6;
+}
+
+p {
+  margin-top: 0;
+  font-family: $ff-body;
+}
+  
+h1,
+h2,
+h3,
+h4 {
+  * + & {
+    margin-top: 2.5rem;
+  }
+}
+
+address {
+  font-style: normal;
+}
+
+blockquote {
+  margin: 1em 0 2em;
+  padding: 1em 2em 1em 1em;
+  font-style: italic;
+  line-height: 1.5;
+  @include fontSize(17px);
+}
+  
+hr {
+    border: 1px solid rgba(skin(charcoal), 0.1);
+    margin: 1.875rem 0;
+}
+  

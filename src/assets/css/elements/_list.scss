@@ -1,0 +1,19 @@
+.List {
+  &--unstyled {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &--inline {
+    @extend .List--unstyled;
+    li:not(last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &-item {
+    .List--inline & {
+      display: inline-block; 
+    }
+  }
+}

@@ -1,0 +1,136 @@
+.Form {
+    &-fieldset {
+        padding: 1.875rem 0;
+        margin: 0;
+        border: none;
+        border-bottom: 2px solid skin(light);
+
+        @include media-breakpoint-up(md) {
+            padding: 2.375rem 0;
+        }
+    }
+
+    &-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &-field {
+        position: relative;
+        margin-bottom: 1.75rem;
+
+        &--full {
+            // When form field takes 100% width of form
+            flex-basis: 100%;
+        }
+
+        .Form-row > & {
+            flex: 1 1 100%;
+            margin-bottom: 1.8125rem;
+        
+            @include media-breakpoint-up(lg) {
+                flex-basis: 0%;
+                max-width: 50%;
+        
+                &--full {
+                    flex-basis: 0%;
+                    max-width: 100%;
+                }
+        
+                + .Form-field {
+                margin-left: 1.25rem;
+                }
+            }
+        }
+
+        &--inline {
+            // Form fields were all elements are aligned horizontally
+
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        
+            @include media-breakpoint-up(lg) {
+                flex-wrap: nowrap;
+            }
+        
+            /* stylelint-disable-next-line */
+            & > * + * {
+                margin-left: 1.25rem;
+            }
+        }
+    }
+
+    &-control {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        
+        .Form-label + & {
+        margin-top: .25rem;
+        }
+    }
+
+    &-label {
+        display: flex;
+        font-weight: $fw-bold;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        
+
+        &--indent {
+            padding-left: 1.125rem;
+        }
+
+        .Form-field--inline & {
+            margin-bottom: 0;
+        }
+
+        .Status--disabled & {
+            opacity: 0;
+        }
+
+        .Status--success & {
+            color: $success;
+        }
+
+        .Status--warning & {
+            color: $warning;
+        }
+
+        .Status--danger & {
+            color: $danger;
+        }
+    }
+
+    &-note, &-error {
+        display: inline-block;
+        @include fontSize(13px);
+        font-style: italic;
+            color: $danger;
+
+        .Form-control + & {
+            margin-top: .5rem;
+        }
+    }
+
+    &-actions {
+        // Area for buttons at the end of the form 
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    
+        @include media-breakpoint-up(md) {
+          justify-content: space-between;
+          flex-wrap: nowrap;
+        }
+      }
+    
+    &-action {
+        &--full {
+          width: 100%;
+        }
+    }
+}
