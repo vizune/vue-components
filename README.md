@@ -8,13 +8,15 @@
 
 src contains the front end assets such as fonts, CSS, Vue components that are shared between both builds.
 
-For further details about .storybook, refer to the README in its directories.
+For further details about .build and .storybook, refer to the README in their directories.
 
-All front end assets will be compiled into "ProjectName.Web/assets", this makes it easier for the Webpack clean task
+Umbrella.Web folder is present for testing purposes of the npm commands, do not copy this folder into your project.
+
+All front end assets will be compiled into "Umbrella.Web/assets", this makes it easier for the Webpack clean task
 
 ## Front end integration
 
-Copy the entire "ProjectName.FrontEnd" folder and paste into your project and replace "ProjectName" with the name of your project. 
+Copy the entire "Umbrella.FrontEnd" folder and paste into your project and replace "Umbrella" with the name of your project. 
 
 Ensure that the .FrontEnd is at the same directory level as the .Web folder
 
@@ -55,7 +57,7 @@ Exports Storybook as a static app
 ```
 npm run watch:css
 ```
-Compiles Tailwind CSS file only, you may want to use this command to see changes after updating the tailwind.config.js file.
+Compiles Tailwind CSS file only, you may want to use this command if you see changes after updating the tailwind.config.js file.
 
 
 ## Front end coding standards
@@ -126,7 +128,7 @@ template: '<vue-file-upload>Please upload your CV:</vue-file-upload>'
 
 * It is recommended to use a "data-js" attribute to select an element in JavaScript rather than a class or ID. This helps with future maintance of components as a class name or ID could be removed because the CSS is no longer needed without knowing that JS functionality is tied to that class.
 
-* Please refrain from using jQuery, this is not supported in the default Webpack build. You will need to implement this if it is a necessity but I suggest visiting http://youmightnotneedjquery.com/ and http://youmightnotneedjqueryplugins.com/ first for vanilla JS alternatives.
+* Please refrain from using jQuery, this is not supported in the default Webpack build. You will need to implement this if it is a necessity but I suggest visiting http://youmightnotneedjquery.com/ and http://youmightnotneedjqueryplugins.com/ first for vanilla JS alternatives. jQuery is required for Bootstrap however and this is added to the _Layout.cshtml file in the .NET (.Web folder) side of the project.
 
 * There is are $ selectors made available in scripts.
 
@@ -175,6 +177,7 @@ export default LoadManager.queue(() => {
 
 * dataset props are used to import data into Vue component
 
+* An example "datepicker" has been provided in the base build to refer to as a template
 
 ### Webpack
 

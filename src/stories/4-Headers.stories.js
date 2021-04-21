@@ -1,9 +1,8 @@
 import TopBar from 'Src/components/header/TopBar.vue';
 import TopBarButton from 'Src/components/header/TopBarButton.vue';
-import Footer from 'Src/components/footer/Footer.vue';
 
 export default {
-  title: 'Header & Footer',
+  title: 'Headers',
 };
 
 export const TopBarVariation1 = () => ({
@@ -78,9 +77,4 @@ export const TopBarVariation3 = () => ({
     </div>
   </top-bar>
   `,
-});
-
-export const FooterComponent = () => ({
-  components: { Footer },
-  template: `<vue-footer></vue-footer>`,
 });
